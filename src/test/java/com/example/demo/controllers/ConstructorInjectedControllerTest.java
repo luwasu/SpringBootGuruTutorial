@@ -1,23 +1,24 @@
 package com.example.demo.controllers;
 
-import com.example.demo.services.GreetingServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * @author Luis Santana-Holmes on 2/4/24
  */
 
-
+@SpringBootTest
 class ConstructorInjectedControllerTest {
 
+    @Autowired
     ConstructorInjectedController controller;
 
-    @BeforeEach
-    void setUp() {
-        controller = new ConstructorInjectedController(new GreetingServiceImpl());
-//        controller = new ConstructorInjectedController(null);
-    }
+//    @BeforeEach
+//    void setUp() {
+//        controller = new ConstructorInjectedController(new GreetingServiceImpl());
+//
+//    }
 
     @Test
     void sayHello() {
